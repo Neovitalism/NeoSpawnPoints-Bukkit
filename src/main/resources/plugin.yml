@@ -1,0 +1,28 @@
+name: NeoSpawnPoints
+version: 1.0.0
+author: Neovitalism
+main: me.neovitalism.neospawnpoints.NeoSpawnPoints
+description: A simple multiple-spawn manager plugin.
+api-version: 1.16
+
+commands:
+  setspawn:
+    aliases: []
+    description: The command used to create spawnpoints.
+    permission: neospawnpoints.setspawn
+    permission-message: Unknown Command. Type "/help" for help.
+  delspawn:
+    aliases: []
+    description: The command used to delete existing spawnpoints.
+    permission: neospawnpoints.delspawn
+    permission-message: Unknown Command. Type "/help" for help.
+  nsp:
+    aliases: []
+    description: Base command for NeoSpawnPoints.
+    permission: neospawnpoints.reload
+    permission-message: Unknown Command. Type "/help" for help.
+  spawn:
+    aliases: []
+    description: Teleports you to your set spawnpoint.
+    permission: neospawnpoints.spawn
+    permission-message: Unknown Command. Type "/help" for help.

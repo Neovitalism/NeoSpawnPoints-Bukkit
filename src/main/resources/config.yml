@@ -1,0 +1,6 @@
+Prefix: 'DEFAULT'
+Teleported-Message: '&aTeleported to x:{x} y:{y} z:{z} in world {world}!'
+No-Spawn-Message: '&cYou have no active spawn point!'
+Spawn-On-First-Join: false
+First-Join-Spawn: ''
+SpawnPoints:
