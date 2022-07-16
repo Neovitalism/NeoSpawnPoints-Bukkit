@@ -1,5 +1,5 @@
 name: NeoSpawnPoints
-version: 1.0.0
+version: 1.0.1
 author: Neovitalism
 main: me.neovitalism.neospawnpoints.NeoSpawnPoints
 description: A simple multiple-spawn manager plugin.
@@ -26,3 +26,5 @@ commands:
     description: Teleports you to your set spawnpoint.
     permission: neospawnpoints.spawn
     permission-message: Unknown Command. Type "/help" for help.
+
+softdepend: [Multiverse-Core]
