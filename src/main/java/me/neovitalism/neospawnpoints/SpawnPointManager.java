@@ -13,10 +13,6 @@ public class SpawnPointManager {
         this.priority = priority;
     }
 
-    public String getSpawnPointName() {
-        return spawnPointName;
-    }
-
     public String getPermission() {
         return "neospawnpoints." + spawnPointName;
     }
@@ -31,5 +27,9 @@ public class SpawnPointManager {
 
     public int getPriority() {
         return priority;
+    }
+
+    public String getSpawnPointName() {
+        return spawnPointName;
     }
 }

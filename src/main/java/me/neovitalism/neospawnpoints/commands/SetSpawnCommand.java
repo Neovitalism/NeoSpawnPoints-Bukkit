@@ -1,6 +1,7 @@
 package me.neovitalism.neospawnpoints.commands;
 
 import me.neovitalism.neospawnpoints.NeoSpawnPoints;
+import me.neovitalism.neospawnpoints.tabcompleters.SetSpawnTabCompleter;
 import me.neovitalism.neospawnpoints.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

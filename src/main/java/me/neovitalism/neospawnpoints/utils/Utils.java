@@ -5,6 +5,8 @@ import me.neovitalism.neospawnpoints.SpawnPointManager;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,6 +15,7 @@ import java.util.regex.Pattern;
 
 public class Utils {
     private static final Pattern HEX_PATTERN = Pattern.compile("&#([A-Fa-f0-9]){6}");
+    private static final String PLACEHOLDER = "\udcba\udcba\udcba\udcba\udcba";
     public static String parseColour(String message) {
         Matcher matcher = HEX_PATTERN.matcher(message);
         while (matcher.find()) {
@@ -22,6 +25,7 @@ public class Utils {
             message = before + hexColor + after;
             matcher = HEX_PATTERN.matcher(message);
         }
+        message = message.replace("\\\\n", PLACEHOLDER).replace("\\n", "\n").replace(PLACEHOLDER, "\\n");
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
@@ -71,5 +75,29 @@ public class Utils {
     public static Location randomLocation(List<SpawnPointManager> s) {
         double random = (Math.random() * s.size());
         return s.get((int) random).getLocation();
+    }
+
+    public static String argReplacer(String message, String... replacements) {
+        for(String replacer : replacements) {
+            String[] parser = replacer.split(":");
+            message = message.replace(parser[0], parser[1]);
+        }
+        return message;
+    }
+
+    public static void sendMessage(CommandSender reciever, String message) {
+        if(message != null && !message.isBlank() && !message.isEmpty()) {
+            reciever.sendMessage(parseColour(NeoSpawnPoints.CONFIG_PREFIX + message));
+        }
+    }
+
+    public static void sendMessage(CommandSender reciever, String message, Location location, String... replacements) {
+        if(message != null && !message.isBlank() && !message.isEmpty()) {
+            if(location != null) {
+                message = replaceLocationKeys(message, location);
+            }
+            message = argReplacer(message, replacements);
+            reciever.sendMessage(parseColour(NeoSpawnPoints.CONFIG_PREFIX + message));
+        }
     }
 }

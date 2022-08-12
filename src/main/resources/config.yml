@@ -1,6 +1,13 @@
 Prefix: 'DEFAULT'
 Teleported-Message: '&aTeleported to x:{x} y:{y} z:{z} in world {world}!'
 No-Spawn-Message: '&cYou have no active spawn point!'
+No-Spawn-Message-Admin: '&c{player} has no specific spawn point!'
+Force-Spawn-Message-Admin: '&aYou sent {player} to their spawn!'
+Force-Specific-Spawn-Admin: '&aYou sent {player} to the spawn point: {spawn}'
+Force-Spawn-Message-Player: '&aYou have been sent to spawn!'
+Force-Specific-Spawn-Player: '&aYou have been sent to {spawn}!'
+Show-Forced-Spawn-Message-Player: true
 Spawn-On-First-Join: false
 First-Join-Spawn: ''
+Spawn-No-Respawn: true
 SpawnPoints:

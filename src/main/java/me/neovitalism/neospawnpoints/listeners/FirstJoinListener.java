@@ -1,4 +1,4 @@
-package me.neovitalism.neospawnpoints.utils;
+package me.neovitalism.neospawnpoints.listeners;
 
 import me.neovitalism.neospawnpoints.NeoSpawnPoints;
 import org.bukkit.entity.Player;

@@ -1,6 +1,5 @@
-package me.neovitalism.neospawnpoints.commands;
+package me.neovitalism.neospawnpoints.tabcompleters;
 
-import me.neovitalism.neospawnpoints.NeoSpawnPoints;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -11,11 +10,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DelSpawnTabCompleter implements TabCompleter {
+public class NSPReloadTabCompleter implements TabCompleter {
+    private static final List<String> arguments = new ArrayList<>();
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
+        arguments.clear();
         if(args.length == 1) {
-            List<String> arguments = NeoSpawnPoints.INSTANCE.getSpawnNames();
+            arguments.add("reload");
             return StringUtil.copyPartialMatches(args[0], arguments, new ArrayList<>());
         }
         return Collections.emptyList();
