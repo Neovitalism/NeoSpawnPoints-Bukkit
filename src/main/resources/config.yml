@@ -10,4 +10,5 @@ Show-Forced-Spawn-Message-Player: true
 Spawn-On-First-Join: false
 First-Join-Spawn: ''
 Spawn-No-Respawn: true
+Force-Spawn-On-Join: false
 SpawnPoints:

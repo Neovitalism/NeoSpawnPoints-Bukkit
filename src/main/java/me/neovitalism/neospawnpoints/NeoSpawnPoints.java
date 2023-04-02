@@ -5,7 +5,7 @@ import me.neovitalism.neospawnpoints.commands.NSPReloadCommand;
 import me.neovitalism.neospawnpoints.commands.SetSpawnCommand;
 import me.neovitalism.neospawnpoints.commands.SpawnCommand;
 import me.neovitalism.neospawnpoints.listeners.DeathListener;
-import me.neovitalism.neospawnpoints.listeners.FirstJoinListener;
+import me.neovitalism.neospawnpoints.listeners.JoinListener;
 import me.neovitalism.neospawnpoints.utils.SpawnUtil;
 import me.neovitalism.neospawnpoints.utils.Utils;
 import org.bukkit.Location;
@@ -30,9 +30,10 @@ public class NeoSpawnPoints extends JavaPlugin {
     public static String CONFIG_PREFIX;
     public static boolean SPAWN_ON_FIRST_JOIN = false;
     public static Location FIRST_JOIN_SPAWN;
-    private final Listener listener = new FirstJoinListener();
+    private final Listener listener = new JoinListener();
     private static FileConfiguration config;
     private static DeathListener deathListener = null;
+    public static boolean FORCE_SPAWN_ON_JOIN = false;
 
     @Override
     public void onEnable() {
@@ -64,6 +65,7 @@ public class NeoSpawnPoints extends JavaPlugin {
         SpawnUtil.forceSpecificSpawnPlayer = config.getString("Force-Specific-Spawn-Player", null);
         SpawnUtil.showForcedSpawnMessagePlayer = config.getBoolean("Show-Forced-Spawn-Message-Player", false);
         DeathListener.spawnNoRespawn = config.getBoolean("Spawn-No-Respawn", false);
+        FORCE_SPAWN_ON_JOIN = config.getBoolean("Force-Spawn-On-Join", false);
 
         spawnPoints = config.getConfigurationSection("SpawnPoints");
         if(spawnPoints != null) {
